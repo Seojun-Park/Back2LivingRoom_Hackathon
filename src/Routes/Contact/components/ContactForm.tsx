@@ -31,22 +31,8 @@ const S = {
     `,
 }
 
-// const Input = styled.input`
-//      font-size: 18px;
-//   padding: 10px 10px 10px 5px;
-//   display: block;
-//   width: 300px;
-//   border: none;
-//   border-bottom: 1px solid #757575;
-//     &:not(:nth-child(2)){
-//         margin-right:15px;
-//     }
-//     &:focus {
-//         outline:none;
-//     }
-//     `;
-
 const Textarea = styled.textarea`
+width:100%;
     border:none;
     border-bottom:1px solid #333;
   `;
@@ -80,14 +66,14 @@ const ContactForm = () => {
                 <S.Form>
                     <S.FormRow>Contact us</S.FormRow>
                     <S.FormRow>
-                        <InputWithLabel label={"your name"} value={name} onChange={onChangeName} placeholder={"Enter your name"} />
-                        <InputWithLabel label={"your email address"} value={email} onChange={onChangeEmail} placeholder={"Enter your email address"} />
+                        <InputWithLabel type='text' label={"your name"} value={name} onChange={onChangeName} placeholder={"Enter your name"} />
+                        <InputWithLabel type='text' label={"your email address"} value={email} onChange={onChangeEmail} placeholder={"Enter your email address"} />
                     </S.FormRow>
                     <S.FormRow>
-                        <InputWithLabel label={"subject"} value={subject} onChange={onChangeSubject} placeholder={"Enter your subject"} />
+                        <InputWithLabel type='text' label={"subject"} value={subject} onChange={onChangeSubject} placeholder={"Enter your subject"} />
                     </S.FormRow>
                     <S.FormRow>
-                        <Textarea placeholder="Email" value={content} onChange={onChangeContent} />
+                        <InputWithLabel type="textarea" label={"content"} placeholder="contact" value={content} onChange={onChangeContent} />
                     </S.FormRow>
                 </S.Form>
             </S.Container>
