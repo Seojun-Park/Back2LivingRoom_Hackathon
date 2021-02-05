@@ -2,6 +2,10 @@ import React, { useEffect, useState, useCallback } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 
+interface IProps {
+    page: string;
+}
+
 interface StyleProps {
     isScroll?: boolean;
     theme?: string;
@@ -43,7 +47,7 @@ const S = {
     display: flex;
     justify-content: center;
   `,
-    NavigationItem: styled.a<StyleProps>`
+    NavigationItem: styled.div<StyleProps>`
     color: ${props => props.theme.palette.white};
     color: ${({ isScroll, theme }) =>
             isScroll ? theme.palette.black : theme.palette.white};
@@ -64,11 +68,10 @@ const S = {
   `
 };
 
-const NAVIGATION_ITEMS = ['Home', 'About', 'Services', 'Blog', 'Contact'];
+const NAVIGATION_ITEMS = ['Home', 'About', 'Services', 'Contact'];
 
-const Header = () => {
+const Header: React.FC<IProps> = ({ page }) => {
     const [isScroll, setIsScroll] = useState(false);
-
     const handleScroll = useCallback(() => {
         if (window.pageYOffset > 0) {
             setIsScroll(true);
@@ -91,8 +94,8 @@ const Header = () => {
                 <S.Logo isScroll={isScroll}>Lorem</S.Logo>
                 <S.Navigation>
                     {NAVIGATION_ITEMS.map(item => (
-                        <S.ExtendedLink to={`${item === 'Home' ? '/' : item}`}>
-                            <S.NavigationItem key={item} isScroll={isScroll}>
+                        <S.ExtendedLink to={`${item === 'Home' ? '/' : item}`} key={item}>
+                            <S.NavigationItem isScroll={isScroll}>
                                 {item}
                             </S.NavigationItem>
                         </S.ExtendedLink>

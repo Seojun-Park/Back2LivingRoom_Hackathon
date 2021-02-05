@@ -6,10 +6,6 @@ const S = {
   Background: styled.section`
     width: 100%;
     max-width:1180px;
-    background-color: ${(props) => props.theme.palette.background};
-    @media (max-width:376px){
-      display:none;
-    }
   `,
   Wrapper: styled.div`
     width: 100%;
@@ -35,25 +31,16 @@ const S = {
     color: ${(props) => props.theme.palette.secondary};
     font-size: 3rem;
     margin-bottom: 1rem;
-    @media (max-width:376px){
-      font-size:2rem;
-    }
   `,
   Unit: styled.span`
     ${(props) => props.theme.typography.subtitle};
     color: ${(props) => props.theme.palette.secondary};
     font-size: 3rem;
     margin-bottom: 1rem;
-    @media (max-width:376px){
-      font-size:2rem;
-    }
   `,
   Title: styled.h3`
     ${(props) => props.theme.typography.subheading};
     margin: 1rem 0;
-    @media (max-width:376px){
-      font-size: 16px;
-    }
   `,
   Description: styled.p`
     ${(props) => props.theme.typography.description};

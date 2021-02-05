@@ -1,46 +1,65 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react'
 
-const useScrollCount = (
-    end = 0,
-    start = 0,
-    duration = 3000,
-    delay = 0,
-) => {
+const useScrollClipPath: any = (
+    direction = 'left',
+    duration = 1,
+    delay = 0) => {
     const element = useRef<HTMLDivElement | any>();
-    const observer: any = useRef<IntersectionObserver | null>(null);
-    const stepTime = Math.abs(Math.floor(duration / (end - start)));
 
-    const onScroll = useCallback(([entry]) => {
-        const { current } = element;
-        if (current && entry.isIntersecting) {
-            let currentNumber = start;
-            const counter = setInterval(() => {
-                currentNumber += 1;
-                current.innerHTML = currentNumber.toString();
-                if (currentNumber === end) {
-                    clearInterval(counter);
-                    observer.current.disconnect(element.current)
-                }
-            }, stepTime)
+    const handleClipPath = (direction: string) => {
+        switch (direction) {
+            case 'up':
+                return 'inset(100% 0 0 0)';
+            case 'down':
+                return 'inset(0 0 100% 0)';
+            case 'left':
+                return 'inset(0 100% 0 0)';
+            case 'right':
+                return 'inset(0 0 0 100%);'
+            default:
+                return;
         }
-    }, [end, start, stepTime, element],
-    )
+    }
+
+    const onScroll = useCallback(
+        ([entry]) => {
+            const { current } = element;
+            if (current && entry.isIntersecting) {
+                current.style.transitionProperty = 'transform, clip-path';
+                current.style.transitionDuration = `${duration * 1.5}s, ${duration}s`;
+                current.style.transitionTimingFunction = 'cubic-bezier(0,0,0.2,1)';
+                current.style.transitionDelay = `${delay}s`;
+                current.style.transform = 'scale(1)';
+                current.style.clipPath = 'inset(0 0 0 0)';
+            }
+        },
+        [delay, duration]
+    );
 
     useEffect(() => {
+        let observer: any;
+
         if (element.current) {
-            observer.current = new IntersectionObserver(
-                onScroll, { threshold: 0.7 });
-            observer.current.observe(element.current);
+            observer = new IntersectionObserver(onScroll, {
+                threshold: 0.7
+            });
+            observer.observe(element.current.parentNode)
         }
         if (observer && observer.disconnect) {
             return () => observer.disconnect();
         }
-        return () => null;
+        return () => null
+        // return () => observer && observer.disconnect();
     }, [onScroll])
 
     return {
-        ref: element
+        ref: element,
+        style: {
+            transform: 'scale(1.2)',
+            clipPath: handleClipPath(direction)
+        }
     }
+
 }
 
-export default useScrollCount
+export default useScrollClipPath
