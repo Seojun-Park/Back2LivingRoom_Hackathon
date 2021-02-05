@@ -3,6 +3,8 @@ import { RouteComponentProps } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
+import Banner from '../../Components/Banner'
+import ContactForm from './components/ContactForm'
 
 interface IProps extends RouteComponentProps { }
 
@@ -14,7 +16,8 @@ const Contact: React.FC<IProps> = () => {
     return (
         <Wrapper>
             <Header page="Contact" />
-            Contact
+            <Banner page="Contact" />
+            <ContactForm />
             <Footer />
         </Wrapper>
     )

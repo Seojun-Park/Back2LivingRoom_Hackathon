@@ -48,7 +48,7 @@ const S = {
     Bottom: styled.div`
     width: 100%;
     color: ${props => props.theme.palette.gray};
-    margin-top: 120px;
+    margin-top: 40px;
     padding-top: 30px;
     display: flex;
     justify-content: center;
