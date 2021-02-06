@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Container, Table } from 'reactstrap'
 import { HOSPITAL_LIST } from '../../../Components/HospitalList'
+import { ArrowDown, ArrowUp } from '../../../Components/Icon'
 
 interface IProps {
     params: any;
@@ -9,7 +10,9 @@ interface IProps {
 
 interface IData {
     name: string;
+    nameRow: string;
     address: string;
+    zipcode: string;
     phone: string;
     web: string;
     logo: string;
@@ -107,18 +110,18 @@ const Chart: React.FC<IProps> = ({ params }) => {
                                 <tr key={idx}>
                                     <td style={{ width: `25%` }}>{item.name}</td>
                                     <td style={{ width: `25%` }}>
-                                        <S.Price color={`${item.price.Colonoscopy < data.price.Colonoscopy ? 'red' : 'green'}`}>
-                                            $ {item.price.Colonoscopy}
+                                        <S.Price color={`${item.price.Colonoscopy > data.price.Colonoscopy ? 'red' : 'green'}`}>
+                                            $ {item.price.Colonoscopy} {item.price.Colonoscopy > data.price.Colonoscopy ? <ArrowUp /> : <ArrowDown />}
                                         </S.Price>
                                     </td>
                                     <td style={{ width: `25%` }}>
-                                        <S.Price color={`${item.price.MRI < data.price.MRI ? 'red' : 'green'}`}>
-                                            $ {item.price.MRI}
+                                        <S.Price color={`${item.price.MRI > data.price.MRI ? 'red' : 'green'}`}>
+                                            $ {item.price.MRI} {item.price.MRI > data.price.MRI ? <ArrowUp /> : <ArrowDown />}
                                         </S.Price>
                                     </td>
                                     <td style={{ width: `25%` }}>
-                                        <S.Price color={`${item.price.XRay < data.price.XRay ? 'red' : 'green'}`}>
-                                            $ {item.price.XRay}
+                                        <S.Price color={`${item.price.XRay > data.price.XRay ? 'red' : 'green'}`}>
+                                            $ {item.price.XRay} {item.price.XRay > data.price.XRay ? <ArrowUp /> : <ArrowDown />}
                                         </S.Price>
                                     </td>
                                 </tr>

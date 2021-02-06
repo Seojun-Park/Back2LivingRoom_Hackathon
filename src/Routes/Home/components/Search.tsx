@@ -5,6 +5,21 @@ import { Collapse, CardBody, Card } from 'reactstrap'
 import { HOSPITAL_LIST } from '../../../Components/HospitalList'
 import { Link } from 'react-router-dom'
 
+interface IData {
+    name: string;
+    nameRow: string
+    address: string;
+    zipcode: string;
+    phone: string;
+    web: string;
+    logo: string;
+    price: {
+        Colonoscopy: number;
+        MRI: number;
+        XRay: number;
+    };
+}
+
 const S = {
     Wrapper: styled.section`
     width: 100%;
@@ -80,23 +95,20 @@ const S = {
 
 const Search = () => {
     const [term, onChangeTerm, setTerm] = useInput("")
-    const [collapse, setCollapse] = useState<boolean>(true);
-    const [status, setStatus] = useState<string>('')
+    const [data, setData] = useState<IData[]>([])
 
-    const onEntering = () => setStatus('opening');
-    const onEntered = () => setStatus('opened');
-
-    const toggle = () => {
-        setStatus('loading');
-        if (collapse) {
-            setCollapse(!collapse)
-        } else {
-
-            setTimeout(() => {
-                setCollapse(!collapse)
-            }, 500);
-        }
+    const handleSearch = () => {
+        const arr = HOSPITAL_LIST.filter(item => {
+            if (item.zipcode.includes(term)) {
+                return true;
+            }
+            else if (item.nameRow.includes(term)) {
+                return true;
+            }
+            return false;
+        })
         setTerm("")
+        setData(arr)
     }
 
     return (
@@ -107,21 +119,16 @@ const Search = () => {
                 </S.Title>
                 <S.SearchForm>
                     <S.Input placeholder={"Enter your zipcode"} value={term} onChange={onChangeTerm} type="text" />
-                    <S.Button onClick={() => toggle()}>
+                    <S.Button onClick={handleSearch}>
                         Find
                     </S.Button>
                 </S.SearchForm>
             </S.Row>
-            {status === 'loading' && <>searching...</>}
-            <S.Collapse
-                isOpen={collapse}
-                onEntering={onEntering}
-                onEntered={onEntered}
-            >
-                {HOSPITAL_LIST.map((item, index) => {
+            <S.Row>
+                {data && data.map((item, index) => {
                     return (
-                        <Link to={`/Service/${item.name}`} style={{ textDecoration: 'none' }}>
-                            <S.Card key={index}>
+                        <Link to={`/Service/${item.name}`} style={{ textDecoration: 'none' }} key={index}>
+                            <S.Card>
                                 <S.Thumbnail src={item.logo} alt="logo" />
                                 <CardBody>
                                     <S.CardTitle>{item.name}</S.CardTitle>
@@ -133,7 +140,7 @@ const Search = () => {
                         </Link>
                     )
                 })}
-            </S.Collapse>
+            </S.Row>
         </S.Wrapper>
     )
 }

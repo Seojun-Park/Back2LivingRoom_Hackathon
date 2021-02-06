@@ -1,7 +1,9 @@
 export const HOSPITAL_LIST = [
   {
     name: "UC Irvine",
+    nameRow:'ucirvine',
     address: "101 The City Drive South, Orange, CA 92868, United States",
+    zipcode: "92868",
     phone: "714-880-7812",
     web: "https://www.ucihealth.org",
     logo:
@@ -11,10 +13,14 @@ export const HOSPITAL_LIST = [
       MRI: 1000,
       XRay: 120,
     },
+    description:
+      "Conpulit rectoreque Traianus quae Traianus inposito Traianus varietate excursus rectoreque Parthos oportunos saltus atque obtemperare saltus hanc cautos castrisque contigua.",
   },
   {
     name: "UCLA",
+    nameRow:"ucla",
     address: "757 Westwood Plaza, Los Angeles, CA 90095, United States",
+    zipcode: "90095",
     phone: "310-267-8000",
     web: "https://www.uclahealth.org/",
     logo:
@@ -24,11 +30,15 @@ export const HOSPITAL_LIST = [
       MRI: 1500,
       XRay: 150,
     },
+    description:
+      "Conpulit rectoreque Traianus quae Traianus inposito Traianus varietate excursus rectoreque Parthos oportunos saltus atque obtemperare saltus hanc cautos castrisque contigua.",
   },
   {
     name: "UC San Diego",
+    nameRow:"ucsandiego",
     address:
       "Perlman Medical Offices 9350 Campus Point Drive, Suite 2B La Jolla, CA 92037, United States",
+    zipcode: "92037",
     phone: "800-926-8273",
     web: "https://health.ucsd.edu/Pages/default.aspx",
     logo:
@@ -38,5 +48,7 @@ export const HOSPITAL_LIST = [
       MRI: 500,
       XRay: 100,
     },
+    description:
+      "Conpulit rectoreque Traianus quae Traianus inposito Traianus varietate excursus rectoreque Parthos oportunos saltus atque obtemperare saltus hanc cautos castrisque contigua.",
   },
 ];
