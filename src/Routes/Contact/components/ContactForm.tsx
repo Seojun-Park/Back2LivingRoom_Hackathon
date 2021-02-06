@@ -19,6 +19,7 @@ const S = {
     `,
     Form: styled.form`
     width:90%;
+    max-width:800px;
     min-height: 50vh;
     display:flex;
     flex-direction:column;
@@ -38,21 +39,6 @@ const S = {
     border-bottom: 1px solid #333;
     `
 }
-
-// const Label = styled.label`
-// color:#999;
-// font-size:18px;
-// position:absolute;
-// pointer-events:none;
-// left:5px;
-// top:10px;
-// transition: 0.2s ease all;
-// ${Input}:focus ~ & {
-//     top:-18px;
-//     font-size:14px;
-//     color:#5264AE
-// }
-// `;
 
 
 
