@@ -16,42 +16,39 @@ const Wrapper = styled.div`
 
 const Label = styled.div`
     font-size: 1rem;
-    color: #999;
-    margin-bottom: 0.25rem;
+    color:${props => props.theme.palette.gray};
+    margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
-
-    width: 100%;
-    border: 1px solid #333;
+    width: 250px;
     outline: none;
     border-radius: 0px;
     line-height: 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 `;
 
 const Textarea = styled.textarea`
-    width: 100%;
-    border: 1px solid #333;
+    width: 520px;
     outline: none;
     border-radius: 0px;
-    line-height: 2.5rem;
-    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    resize:none;
 `;
 
 
-// rest 쪽에는 onChange, type, name, value, placeholder 등의 input 에서 사용 하는 값들을 넣어줄수 있다.
 const InputWithLabel: React.FC<IProps> = ({ label, type, ...rest }) => {
     const handleInput = (type: string) => {
         switch (type) {
             case 'text':
                 return <Input {...rest} />;
             case 'textarea':
-                return <Textarea {...rest} />;
+                return <Textarea {...rest} rows={5} />;
             default:
                 return null;
         }

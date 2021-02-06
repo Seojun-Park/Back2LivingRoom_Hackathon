@@ -31,6 +31,8 @@ const S = {
     height: ${props => (props.isScroll ? '70px' : '100px')};
     display: flex;
     flex-direction: row;
+    justify-content:space-between;
+    padding:0 30px;
     align-items: center;
   `,
     Logo: styled.span<StyleProps>`
@@ -42,8 +44,6 @@ const S = {
     max-width: 25%;
   `,
     Navigation: styled.div`
-    flex: 0 0 50%;
-    max-width: 50%;
     display: flex;
     justify-content: center;
   `,
@@ -56,12 +56,6 @@ const S = {
     &:hover {
       opacity: 0.5;
     }
-  `,
-    ButtonWrapper: styled.div`
-    flex: 0 0 25%;
-    max-width: 25%;
-    display: flex;
-    justify-content: flex-end;
   `,
     ExtendedLink: styled(Link)`
   text-decoration:none;
@@ -101,9 +95,6 @@ const Header: React.FC<IProps> = ({ page }) => {
                         </S.ExtendedLink>
                     ))}
                 </S.Navigation>
-                {/* <S.ButtonWrapper>
-                    button or any idea
-                </S.ButtonWrapper> */}
             </S.Header>
         </S.Wrapper>
     );

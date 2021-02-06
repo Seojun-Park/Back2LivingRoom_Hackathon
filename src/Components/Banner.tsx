@@ -39,6 +39,7 @@ const S = {
     Title: styled.h3`
     ${props => props.theme.typography.title};
     color:white;
+text-shadow: 3px 5px 2px #474747;
     `
 }
 

@@ -1,2 +1,3 @@
 export const ArrowDown = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style={{ fill: "green" }} viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z" /></svg>
 export const ArrowUp = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style={{ fill: "red" }} viewBox="0 0 24 24"><path d="M12 0l8 9h-6v15h-4v-15h-6z" /></svg>
+export const ArrowRight = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" style={{ marginLeft: '8px', fill: "white" }} viewBox="0 0 24 24" > <path d="M24 11.871l-5-4.871v3h-19v4h19v3z" /></svg >
