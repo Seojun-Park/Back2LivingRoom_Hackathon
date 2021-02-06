@@ -68,7 +68,7 @@ const S = {
   `
 };
 
-const NAVIGATION_ITEMS = ['Home', 'About', 'Services', 'Contact'];
+const NAVIGATION_ITEMS = ['Home', 'About', 'Contact'];
 
 const Header: React.FC<IProps> = ({ page }) => {
     const [isScroll, setIsScroll] = useState(false);
@@ -101,9 +101,9 @@ const Header: React.FC<IProps> = ({ page }) => {
                         </S.ExtendedLink>
                     ))}
                 </S.Navigation>
-                <S.ButtonWrapper>
+                {/* <S.ButtonWrapper>
                     button or any idea
-                </S.ButtonWrapper>
+                </S.ButtonWrapper> */}
             </S.Header>
         </S.Wrapper>
     );

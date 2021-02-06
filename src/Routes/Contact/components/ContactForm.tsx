@@ -43,9 +43,9 @@ const S = {
 
 
 const ContactForm = () => {
-    const [email, onChangeEmail, setEmail] = useInput("")
-    const [name, onChangeName, setName] = useInput("")
-    const [content, onChangeContent, setContent] = useInput("")
+    const [email, onChangeEmail] = useInput("")
+    const [name, onChangeName] = useInput("")
+    const [content, onChangeContent] = useInput("")
 
     return (
         <S.Wrapper>
