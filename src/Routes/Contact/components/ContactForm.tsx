@@ -28,14 +28,16 @@ const S = {
     `,
     FormRow: styled.div`
     margin:15px;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
     `,
-}
-
-const Textarea = styled.textarea`
-width:100%;
+    Input: styled(InputWithLabel)`
+    width: 200px;
     border:none;
-    border-bottom:1px solid #333;
-  `;
+    border-bottom: 1px solid #333;
+    `
+}
 
 // const Label = styled.label`
 // color:#999;
@@ -57,7 +59,6 @@ width:100%;
 const ContactForm = () => {
     const [email, onChangeEmail, setEmail] = useInput("")
     const [name, onChangeName, setName] = useInput("")
-    const [subject, onChangeSubject, setSubject] = useInput("")
     const [content, onChangeContent, setContent] = useInput("")
 
     return (
@@ -66,14 +67,11 @@ const ContactForm = () => {
                 <S.Form>
                     <S.FormRow>Contact us</S.FormRow>
                     <S.FormRow>
-                        <InputWithLabel type='text' label={"your name"} value={name} onChange={onChangeName} placeholder={"Enter your name"} />
-                        <InputWithLabel type='text' label={"your email address"} value={email} onChange={onChangeEmail} placeholder={"Enter your email address"} />
+                        <S.Input type="text" label={'your name'} value={name} onChange={onChangeName} placeholder={'Enter your name'} />
+                        <S.Input type="text" label="your email address" value={email} onChange={onChangeEmail} placeholder={"Enter your email"} />
                     </S.FormRow>
                     <S.FormRow>
-                        <InputWithLabel type='text' label={"subject"} value={subject} onChange={onChangeSubject} placeholder={"Enter your subject"} />
-                    </S.FormRow>
-                    <S.FormRow>
-                        <InputWithLabel type="textarea" label={"content"} placeholder="contact" value={content} onChange={onChangeContent} />
+                        <S.Input type="textarea" label={"content"} placeholder="contact" value={content} onChange={onChangeContent} />
                     </S.FormRow>
                 </S.Form>
             </S.Container>

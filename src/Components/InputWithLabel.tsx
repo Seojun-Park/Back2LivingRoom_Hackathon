@@ -10,7 +10,7 @@ interface IProps {
 
 const Wrapper = styled.div`
     & + & {
-        margin-top: 1rem;
+        /* margin-top: 1rem; */
     }
 `;
 
