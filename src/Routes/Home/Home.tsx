@@ -3,7 +3,7 @@ import { RouteComponentProps } from 'react-router-dom'
 import styled from 'styled-components'
 import Footer from '../../Components/Footer'
 import Header from '../../Components/Header'
-import { Banner, Search } from './components'
+import { Banner, Search, Info } from './components'
 
 interface IProps extends RouteComponentProps { }
 
@@ -17,6 +17,7 @@ const Home: React.FC<IProps> = () => {
             <Header page="Home" />
             <Banner />
             <Search />
+            {/* <Info /> */}
             <Footer />
         </Wrapper>
     )

@@ -7,11 +7,12 @@ const S = {
     width: 100%;
     max-width: 1180px;
     margin: auto;
-    padding: 120px 0 30px;
+    padding: 60px 0 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    border-top:1px solid ${props => props.theme.palette.gray};
   `,
   Info: styled.div`
   padding-left: 30px;
