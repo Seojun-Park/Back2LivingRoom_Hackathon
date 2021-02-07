@@ -23,6 +23,7 @@ interface IData {
 const S = {
     Wrapper: styled.section`
     width: 100%;
+    /* height:100vh; */
     max-width: 1180px;
     margin: 0 auto;
     padding: 120px 0;
@@ -30,7 +31,7 @@ const S = {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
-    margin-top: 400px;
+    margin-top: 500px;
   `,
     Row: styled.div`
     display:flex;
@@ -58,7 +59,7 @@ const S = {
         outline:none;
     }
     `,
-    Button: styled.button`
+    SubmitButton: styled.input`
     width: 120px;
     background-color:${props => props.theme.palette.primary};
     border:none;
@@ -130,11 +131,9 @@ const Search = () => {
                 <S.Title>
                     Find a hospital
                 </S.Title>
-                <S.SearchForm>
+                <S.SearchForm onSubmit={handleSearch}>
                     <S.Input placeholder={"Enter your zipcode or hospital name"} value={term} onChange={onChangeTerm} type="text" />
-                    <S.Button onClick={handleSearch}>
-                        Find
-                    </S.Button>
+                    <S.SubmitButton type="submit" value="Find" />
                 </S.SearchForm>
             </S.Row>
             <S.Row>
