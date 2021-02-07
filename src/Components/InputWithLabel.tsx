@@ -25,9 +25,12 @@ const Input = styled.input`
     outline: none;
     border-radius: 0px;
     line-height: 2.5rem;
-    font-size: 1rem;
+    font-size: 18px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+    &:focus{
+        outline:none;
+    }
 `;
 
 const Textarea = styled.textarea`
@@ -35,10 +38,13 @@ const Textarea = styled.textarea`
     outline: none;
     border-radius: 0px;
     line-height: 1.5rem;
-    font-size: 1rem;
+    font-size: 18px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     resize:none;
+    &:focus{
+        outline:none;
+    }
 `;
 
 

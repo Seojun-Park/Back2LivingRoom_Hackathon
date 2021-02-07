@@ -40,6 +40,7 @@ const S = {
     ${props => props.theme.typography.title};
     color:white;
 text-shadow: 3px 5px 2px #474747;
+padding-left:30px;
     `
 }
 

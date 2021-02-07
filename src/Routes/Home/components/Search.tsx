@@ -24,37 +24,50 @@ const S = {
     Wrapper: styled.section`
     width: 100%;
     max-width: 1180px;
-    margin: auto;
+    margin: 0 auto;
     padding: 120px 0;
     padding-left: 30px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    /* justify-content: center; */
     margin-top: 400px;
   `,
     Row: styled.div`
-    /* display:flex; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width:90%;
     margin:0 auto;
     `,
     Title: styled.span`
     ${props => props.theme.typography.title};
     `,
     SearchForm: styled.form`
+    width: 100%;
     display:flex;
     margin:15px auto;
     `,
     Input: styled.input`
-    width:600px;
+    width:80%;
     padding: 8px 12px;
     margin-right: 15px;
-    border-radius:4px;
+    /* border-radius:4px; */
+    border: none;
+    border-bottom:2px solid ${props => props.theme.palette.darkgray};
+    &:focus{
+        outline:none;
+    }
     `,
     Button: styled.button`
-    width: 80px;
+    width: 120px;
     background-color:${props => props.theme.palette.primary};
     border:none;
     color:white;
     border-radius:4px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:6px;
     &:hover{
         transition:0.2s linear;
         opacity:0.5;
@@ -118,7 +131,7 @@ const Search = () => {
                     Find a hospital
                 </S.Title>
                 <S.SearchForm>
-                    <S.Input placeholder={"Enter your zipcode"} value={term} onChange={onChangeTerm} type="text" />
+                    <S.Input placeholder={"Enter your zipcode or hospital name"} value={term} onChange={onChangeTerm} type="text" />
                     <S.Button onClick={handleSearch}>
                         Find
                     </S.Button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const S = {
@@ -23,6 +24,7 @@ const S = {
     height: 100%;
     max-width: 1180px;
     padding-top: 100px;
+    padding-left:50px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -41,7 +43,20 @@ const S = {
     margin-bottom: 2rem;
   `,
   Button: styled.button`
-    width: 5rem;
+    width: 120px;
+    background-color:${props => props.theme.palette.primary};
+    border:none;
+    color:white;
+    border-radius:4px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:8px 12px;
+    padding-top:12px;
+    &:hover{
+        transition:0.2s linear;
+        opacity:0.5;
+    }
   `
 };
 
@@ -60,9 +75,11 @@ const Banner = () => {
           <br />
           labore et dolore magna aliqua. Nisl tincidunt eget nullam non.
         </S.Description>
-        <S.Button>
-          Lorem
+        <Link to={'/About'} style={{ textDecoration: "none" }}>
+          <S.Button>
+            About us
         </S.Button>
+        </Link>
       </S.Wrapper>
     </S.Background>
   );

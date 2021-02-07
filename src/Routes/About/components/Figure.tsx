@@ -8,10 +8,10 @@ const S = {
     max-width:1180px;
   `,
   Wrapper: styled.div`
-    width: 100%;
+    width: 90%;
     max-width: 1180px;
     margin: auto;
-    padding: 100px 0;
+    padding: 50px 0;
   `,
   List: styled.ul`
     display: flex;
@@ -28,13 +28,13 @@ const S = {
   `,
   Number: styled.span`
     ${(props) => props.theme.typography.subtitle};
-    color: ${(props) => props.theme.palette.secondary};
+    color: ${(props) => props.theme.palette.primary};
     font-size: 3rem;
     margin-bottom: 1rem;
   `,
   Unit: styled.span`
     ${(props) => props.theme.typography.subtitle};
-    color: ${(props) => props.theme.palette.secondary};
+    color: ${(props) => props.theme.palette.primary};
     font-size: 3rem;
     margin-bottom: 1rem;
   `,
@@ -49,22 +49,22 @@ const S = {
 
 const FIGURE_ITEMS = [
   {
-    title: 'Total Projects',
+    title: 'Patners',
     number: 10,
     unit: '+',
     description: 'Ipsum faucibus vitae aliquet nec ullamcorper sit amet risus.',
   },
   {
-    title: 'Partners',
-    number: 124,
-    unit: '',
+    title: 'Users',
+    number: 100,
+    unit: '+',
     description:
       'Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus.',
   },
   {
-    title: 'Business Success',
-    number: 92,
-    unit: '%',
+    title: 'Daily Visit',
+    number: 1000,
+    unit: '+',
     description:
       'Porttitor rhoncus dolor purus non enim praesent elementum facilisis.',
   },
@@ -73,8 +73,8 @@ const FIGURE_ITEMS = [
 const Figure = () => {
   const countItem: any = {
     0: useScrollCount(10),
-    1: useScrollCount(124),
-    2: useScrollCount(92),
+    1: useScrollCount(100),
+    2: useScrollCount(1000),
   };
 
   return (

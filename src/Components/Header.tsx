@@ -85,7 +85,9 @@ const Header: React.FC<IProps> = ({ page }) => {
     return (
         <S.Wrapper isScroll={isScroll}>
             <S.Header isScroll={isScroll}>
-                <S.Logo isScroll={isScroll}>Lorem</S.Logo>
+                <Link to="/" style={{ textDecoration: "none" }}>
+                    <S.Logo isScroll={isScroll}>Lorem</S.Logo>
+                </Link>
                 <S.Navigation>
                     {NAVIGATION_ITEMS.map(item => (
                         <S.ExtendedLink to={`${item === 'Home' ? '/' : '/' + item}`} key={item}>

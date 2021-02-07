@@ -7,6 +7,9 @@ ${reset}
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
   }
+  *{
+    font-family:'Noto sans', sans-serif;
+  }
 `;
 
 export default GlobalStyle;

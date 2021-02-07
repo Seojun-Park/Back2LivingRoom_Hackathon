@@ -52,6 +52,7 @@ const S = {
     font-size: 2rem;
     font-weight:600;
     margin:30px 15px;
+    font-family:'Noto sans', sans-serif;
     `,
     FormRow: styled.div`
     margin:15px;

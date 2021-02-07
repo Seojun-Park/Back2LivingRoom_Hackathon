@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const S = {
-    Wrapper: styled.footer`
+  Wrapper: styled.footer`
     width: 100%;
     max-width: 1180px;
     margin: auto;
@@ -12,30 +13,29 @@ const S = {
     justify-content: space-between;
     flex-wrap: wrap;
   `,
-    Info: styled.div`
-    flex: 0 0 30%;
-    max-width: 30%;
+  Info: styled.div`
+  padding-left: 30px;
   `,
-    Logo: styled.span`
+  Logo: styled.span`
     ${props => props.theme.typography.label};
-    color: ${props => props.theme.palette.darkgray};
+    color: ${props => props.theme.palette.gray};
     display: inline-block;
-    font-weight: 900;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 1rem;;
     margin-bottom: 2rem;
   `,
-    Menu: styled.ul`
+  Menu: styled.ul`
     flex: 0 0 20%;
     max-width: 20%;
     display: flex;
     flex-direction: column;
   `,
-    MenuTitle: styled.h4`
+  MenuTitle: styled.h4`
     ${props => props.theme.typography.label};
     color: ${props => props.theme.palette.secondary};
     margin-bottom: 2.5rem;
   `,
-    MenuItem: styled.a`
+  MenuItem: styled.a`
     ${props => props.theme.typography.body};
     color: ${props => props.theme.palette.gray};
     display: inline-block;
@@ -45,7 +45,7 @@ const S = {
       opacity: 0.5;
     }
   `,
-    Bottom: styled.div`
+  Bottom: styled.div`
     width: 100%;
     color: ${props => props.theme.palette.gray};
     margin-top: 40px;
@@ -57,23 +57,38 @@ const S = {
       ${props => props.theme.typography.caption};
     }
   `,
+  Row: styled.div`
+  
+  `
 };
 
 const Footer = () => (
-    <S.Wrapper>
-        <S.Info>
-            <S.Logo>James | Jin Park</S.Logo>
-        </S.Info>
-        <S.Menu>
-            <S.MenuTitle>Quick Links</S.MenuTitle>
-            <S.MenuItem>About Us</S.MenuItem>
-            <S.MenuItem>Serivces</S.MenuItem>
-            <S.MenuItem>Contact Us</S.MenuItem>
-        </S.Menu>
-        <S.Bottom>
-            <span>Jame | Jin Park © 2021</span>
-        </S.Bottom>
-    </S.Wrapper>
+  <S.Wrapper>
+    <S.Info>
+      <S.MenuTitle>Creators</S.MenuTitle>
+      <S.Row>
+        <S.Logo>James Chao : cchao@42.student.fr</S.Logo>
+      </S.Row>
+      <S.Row>
+        <S.Logo>Jin Park : jinpark@42.student.fr</S.Logo>
+      </S.Row>
+    </S.Info>
+    <S.Menu>
+      <S.MenuTitle>Quick Links</S.MenuTitle>
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <S.MenuItem>Home</S.MenuItem>
+      </Link>
+      <Link to="/About" style={{ textDecoration: 'none' }}>
+        <S.MenuItem>About Us</S.MenuItem>
+      </Link>
+      <Link to="/Contact" style={{ textDecoration: 'none' }}>
+        <S.MenuItem>Contact Us</S.MenuItem>
+      </Link>
+    </S.Menu>
+    <S.Bottom>
+      <span>Jame | Jin Park © 2021</span>
+    </S.Bottom>
+  </S.Wrapper>
 );
 
 export default Footer;
