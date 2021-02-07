@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import useInput from '../../../hooks/useInput'
-import { Collapse, CardBody, Card } from 'reactstrap'
+import { CardBody, Card } from 'reactstrap'
 import { HOSPITAL_LIST } from '../../../Components/HospitalList'
 import { Link } from 'react-router-dom'
 
@@ -74,9 +74,6 @@ const S = {
         opacity:0.5;
     }
     `,
-    Collapse: styled(Collapse)`
-    margin:15px auto;
-    `,
     Card: styled(Card)`
     margin:10px auto;
     display:flex;
@@ -124,6 +121,7 @@ const Search = () => {
         setTerm("")
         setData(arr)
     }
+
 
     return (
         <S.Wrapper>

@@ -86,7 +86,7 @@ const Header: React.FC<IProps> = ({ page }) => {
         <S.Wrapper isScroll={isScroll}>
             <S.Header isScroll={isScroll}>
                 <Link to="/" style={{ textDecoration: "none" }}>
-                    <S.Logo isScroll={isScroll}>Lorem</S.Logo>
+                    <S.Logo isScroll={isScroll}>Hospital Price Transparency</S.Logo>
                 </Link>
                 <S.Navigation>
                     {NAVIGATION_ITEMS.map(item => (

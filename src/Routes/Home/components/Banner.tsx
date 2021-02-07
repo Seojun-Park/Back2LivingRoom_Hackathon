@@ -66,9 +66,7 @@ const Banner = () => {
       <S.Cover />
       <S.Wrapper>
         <S.Title>
-          Lorem ipsum
-          <br />
-          Dolor sit amet
+          Hospital Price Transparency
         </S.Title>
         <S.Description>
           Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut

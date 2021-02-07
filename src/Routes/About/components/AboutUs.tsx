@@ -120,7 +120,7 @@ const Feature = () => {
       <S.Row>
         <S.List>
           {FEAURE_ITEMS.map((item, index) => (
-            <S.ListItem key={item}>
+            <S.ListItem key={index}>
               <span>•</span> {item}
             </S.ListItem>
           ))}
@@ -138,8 +138,8 @@ const Feature = () => {
               <S.ImageDesc>Jinpark</S.ImageDesc>
             </S.Col>
             <S.Col>
-              <S.Image url={"https://firebasestorage.googleapis.com/v0/b/resume-1ac93.appspot.com/o/profile.jpeg?alt=media&token=e0ab66cc-4252-4938-90e8-800da11720fa"} />
-              <S.ImageDesc>Jame Chao</S.ImageDesc>
+              <S.Image url={"https://i2.wp.com/www.un.org/pga/72/wp-content/uploads/sites/51/2017/08/dummy-profile-1.jpg?resize=300%2C300&ssl=1"} />
+              <S.ImageDesc>James Chao</S.ImageDesc>
             </S.Col>
           </S.ImageBox>
         </S.TextWrapper>

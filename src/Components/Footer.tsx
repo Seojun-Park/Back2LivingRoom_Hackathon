@@ -36,7 +36,7 @@ const S = {
     color: ${props => props.theme.palette.secondary};
     margin-bottom: 2.5rem;
   `,
-  MenuItem: styled.a`
+  MenuItem: styled.div`
     ${props => props.theme.typography.body};
     color: ${props => props.theme.palette.gray};
     display: inline-block;
@@ -68,10 +68,10 @@ const Footer = () => (
     <S.Info>
       <S.MenuTitle>Creators</S.MenuTitle>
       <S.Row>
-        <S.Logo>James Chao : cchao@42.student.fr</S.Logo>
+        <S.Logo>James Chao : 42@42.student.fr</S.Logo>
       </S.Row>
       <S.Row>
-        <S.Logo>Jin Park : jinpark@42.student.fr</S.Logo>
+        <S.Logo>Jin Park : 42@42.student.fr</S.Logo>
       </S.Row>
     </S.Info>
     <S.Menu>
