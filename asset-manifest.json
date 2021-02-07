@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/Back2LivingRoom_Hackathon/static/js/main.3b842619.chunk.js",
-    "main.js.map": "/Back2LivingRoom_Hackathon/static/js/main.3b842619.chunk.js.map",
+    "main.js": "/Back2LivingRoom_Hackathon/static/js/main.aae9329d.chunk.js",
+    "main.js.map": "/Back2LivingRoom_Hackathon/static/js/main.aae9329d.chunk.js.map",
     "runtime-main.js": "/Back2LivingRoom_Hackathon/static/js/runtime-main.5bca5b6b.js",
     "runtime-main.js.map": "/Back2LivingRoom_Hackathon/static/js/runtime-main.5bca5b6b.js.map",
     "static/css/2.150d169a.chunk.css": "/Back2LivingRoom_Hackathon/static/css/2.150d169a.chunk.css",
-    "static/js/2.d0a24338.chunk.js": "/Back2LivingRoom_Hackathon/static/js/2.d0a24338.chunk.js",
-    "static/js/2.d0a24338.chunk.js.map": "/Back2LivingRoom_Hackathon/static/js/2.d0a24338.chunk.js.map",
+    "static/js/2.8ed5c135.chunk.js": "/Back2LivingRoom_Hackathon/static/js/2.8ed5c135.chunk.js",
+    "static/js/2.8ed5c135.chunk.js.map": "/Back2LivingRoom_Hackathon/static/js/2.8ed5c135.chunk.js.map",
     "index.html": "/Back2LivingRoom_Hackathon/index.html",
     "static/css/2.150d169a.chunk.css.map": "/Back2LivingRoom_Hackathon/static/css/2.150d169a.chunk.css.map",
-    "static/js/2.d0a24338.chunk.js.LICENSE.txt": "/Back2LivingRoom_Hackathon/static/js/2.d0a24338.chunk.js.LICENSE.txt"
+    "static/js/2.8ed5c135.chunk.js.LICENSE.txt": "/Back2LivingRoom_Hackathon/static/js/2.8ed5c135.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5bca5b6b.js",
     "static/css/2.150d169a.chunk.css",
-    "static/js/2.d0a24338.chunk.js",
-    "static/js/main.3b842619.chunk.js"
+    "static/js/2.8ed5c135.chunk.js",
+    "static/js/main.aae9329d.chunk.js"
   ]
 }
